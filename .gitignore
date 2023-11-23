@@ -1,0 +1,18 @@
+# Unity specific
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/Assets/AssetStoreTools*
+
+# User-specific settings
+/[Pp]rojectSettings/ProjectVersion.txt
+/[Pp]rojectSettings/ProjectSettings.asset
+/[Pp]rojectSettings/*.csproj
+
+# Visual Studio Code generated files
+/.vscode/
+
+# macOS specific files (if you're developing on macOS)
+.DS_Store
