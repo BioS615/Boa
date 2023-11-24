@@ -16,3 +16,6 @@
 
 # macOS specific files (if you're developing on macOS)
 .DS_Store
+.vs
+Library
+Logs
