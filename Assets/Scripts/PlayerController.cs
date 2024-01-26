@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     public float speed = 5f; // Movement speed
     public float rotationSpeed = 720f; // Rotation speed in degrees per second for spin attack
+    public GameObject weapon;
 
     private PlayerControls playerControls;
     private Vector2 currentMovementInput;
@@ -55,6 +56,7 @@ public class PlayerController : MonoBehaviour
         UpdateAnimation();
         HandleMovement();
         HandleRotation();
+
     }
 
     private void HandleHealthChanged(int newHealth)
@@ -108,11 +110,14 @@ public class PlayerController : MonoBehaviour
 
         // Wait for the animator to start the expected animation state.
         yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"));
+        weapon.GetComponent<BoxCollider>().enabled = true;
+        weapon.GetComponent<TestWeapon>().hasStruck = false;
         // Now wait until the animation is no longer playing.
         yield return new WaitWhile(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"));
 
         // Optionally wait for a transition to finish if you want to ensure complete smoothness.
         yield return new WaitWhile(() => animator.IsInTransition(0));
+        weapon.GetComponent<BoxCollider>().enabled = false;
 
         isAttacking = false;
     }

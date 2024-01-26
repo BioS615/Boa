@@ -59,11 +59,13 @@
     <Analyzer Include="G:\2023.1.19f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\TestDummy.cs" />
     <Compile Include="Assets\Scripts\TopDownCameraFollow.cs" />
     <Compile Include="Assets\Scripts\HelloWorld.cs" />
     <Compile Include="Assets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerControls.cs" />
+    <Compile Include="Assets\Scripts\TestWeapon.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -348,6 +350,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>G:\2023.1.19f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -801,6 +806,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{9319F0A6-F5D5-B0C8-0181-15AB67724024}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="SingularityGroup.HotReload.Runtime.Public.csproj">
+      <Project>{93C3ED80-B868-E0DD-E5AE-A7F8E7DF9C18}</Project>
+      <Name>SingularityGroup.HotReload.Runtime.Public</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
